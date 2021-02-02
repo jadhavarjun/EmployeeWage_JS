@@ -9,8 +9,7 @@ class Utility {
     DAY = 0;
     
     empCheck = 0
-    empWage = 0
-    totalWage = 0
+    totalEmpWage = 0
     totalEmpHrs = 0 
     totalWorkingDays = 0
 
@@ -18,11 +17,6 @@ class Utility {
 
         this.empCheck = Math.floor(Math.random() * 10) % 3;
         return this.empCheck;
-    }
-
-    empDailyWage = () => {
-        this.empWage = this.EMP_HR * this.EMP_RATE_PER_HOUR;
-        return this.empWage;
     }
 
     getWorkingHrs = () =>{
