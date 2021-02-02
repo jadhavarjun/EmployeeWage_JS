@@ -1,7 +1,20 @@
 class Utility {
 
+    empCheck;
+    empAttendance = () => {
+        this.empCheck = Math.floor(Math.random() * 10) % 2;
+    }
+
     mainEmployeeWage = () => {
-        console.log("Welcome to EmployeeWage Program");
+        
+        this.empAttendance();
+
+            if (this.empCheck == 1) {
+                console.log("\n * Employee Is Present..! ");
+            }
+            else{
+                console.log("\n * Employee Is Absent..! ");
+            }
     }
 }
 
