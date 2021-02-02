@@ -1,20 +1,44 @@
 class Utility {
 
-    empCheck;
-    empAttendance = () => {
-        this.empCheck = Math.floor(Math.random() * 10) % 2;
+    EMP_RATE_PER_HOUR = 20;
+    IS_FULL_TIME = 1;
+    IS_PART_TIME = 2;
+    EMP_HR = 0;
+    
+    empCheck
+    //empWage
+
+    empAttendance() {
+
+        this.empCheck = Math.floor(Math.random() * 10) % 3;
+        return this.empCheck;
     }
+
+    // empDailyWage = () => {
+    //     this.empWage = this.EMP_HR * this.EMP_RATE_PER_HOUR;
+    //     return this.empWage;
+    // }
 
     mainEmployeeWage = () => {
         
         this.empAttendance();
 
-            if (this.empCheck == 1) {
-                console.log("\n * Employee Is Present..! ");
-            }
-            else{
-                console.log("\n * Employee Is Absent..! ");
-            }
+        switch(this.empCheck) {
+            
+            case this.IS_FULL_TIME:
+                    this.EMP_HR = 8
+                    break;
+            
+            case this.IS_PART_TIME:
+                    this.EMP_HR = 4    
+                    break;
+                
+            default: 
+	            console.log("Employee Is Absent..!!");
+        }
+        //this.empDailyWage();
+        let empWage = this.EMP_HR * this.EMP_RATE_PER_HOUR;
+        console.log("\n * The Daily Eamployee Wage Is : "+empWage);
     }
 }
 
