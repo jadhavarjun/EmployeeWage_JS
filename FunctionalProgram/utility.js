@@ -6,18 +6,12 @@ class Utility {
     EMP_HR = 0;
     
     empCheck
-    //empWage
 
     empAttendance() {
 
         this.empCheck = Math.floor(Math.random() * 10) % 3;
         return this.empCheck;
     }
-
-    // empDailyWage = () => {
-    //     this.empWage = this.EMP_HR * this.EMP_RATE_PER_HOUR;
-    //     return this.empWage;
-    // }
 
     mainEmployeeWage = () => {
         
