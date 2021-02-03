@@ -25,41 +25,30 @@ class Utility {
         return this.empWage;
     }
 
-    getWorkingHrs = () =>{
-
-        switch(this.empCheck) {
-                
-            case this.IS_PART_TIME:
-                    this.EMP_HR = 8
-                    break;
-            
-            case this.IS_FULL_TIME:
-                    this.EMP_HR = 4    
-                    break;
-                
-            default: 
-                this.EMP_HR = 0
-        }
-        return this.EMP_HR
-    }
-
     mainEmployeeWage = () => {
 
-        let empDailyWage = new Array();
-
-        
+        this.empAttendance();
 
         while (this.totalEmpHrs <= this.MAX_HRS_IN_MONTH && this.totalWorkingDays < this.NUM_OF_WORKING_DAYS) {
             this.totalWorkingDays++;
 
-            this.empAttendance();
-            this.EMP_HR = this.getWorkingHrs(this.empCheck);
+            switch(this.empCheck) {
+                
+                case this.IS_PART_TIME:
+                        this.EMP_HR = 8
+                        break;
+                
+                case this.IS_FULL_TIME:
+                        this.EMP_HR = 4    
+                        break;
+                    
+                default: 
+                    this.EMP_HR = 0
+            }
             this.totalEmpHrs += this.EMP_HR;
-            empDailyWage.push(this.empDailyWage(this.EMP_HR))
         }
         this.totalEmpWage = this.totalEmpHrs * this.EMP_RATE_PER_HOUR;
-        console.log("\n * The Daily Wage Of Employee Is : "+empDailyWage);
-        console.log("\n * The Monthly Wage Of Employee Is : "+this.totalEmpWage);
+        console.log("\n Employee's Total Days : "+this.totalWorkingDays+" ,Working Hr : "+this.totalEmpHrs+" ,Total Wage Is : "+this.totalEmpWage);  
     }
 }
 
