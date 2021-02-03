@@ -1,54 +1,43 @@
 class Utility {
 
-    EMP_RATE_PER_HOUR = 20
-    NUM_OF_WORKING_DAYS = 21
-    MAX_HRS_IN_MONTH = 100;
-    IS_FULL_TIME = 1;
-    IS_PART_TIME = 2;
+    EMP_RATE_PER_HOUR = 20;
+    NUM_OF_WORKING_DAYS = 20;
     EMP_HR = 0;
     DAY = 0;
-    
-    empCheck = 0
-    totalEmpWage = 0
-    totalEmpHrs = 0 
-    totalWorkingDays = 0
+    TOTAL_EMP_HR=0;
 
-    empAttendance() {
-
-        this.empCheck = Math.floor(Math.random() * 10) % 3;
-        return this.empCheck;
-    }
-
-    getWorkingHrs = () =>{
-
-        switch(this.empCheck) {
-                
-            case this.IS_PART_TIME:
-                    this.EMP_HR = 8
-                    break;
-            
-            case this.IS_FULL_TIME:
-                    this.EMP_HR = 4    
-                    break;
-                
-            default: 
-                this.EMP_HR = 0
-        }
-        return this.EMP_HR
-    }
+    empCheck=0;
+    empWage=0;
+    totalWage=0;
 
     mainEmployeeWage = () => {
 
-        this.empAttendance();
-
-        while (this.totalEmpHrs <= this.MAX_HRS_IN_MONTH && this.totalWorkingDays < this.NUM_OF_WORKING_DAYS) {
-            this.totalWorkingDays++;
-
-            this.getWorkingHrs(this.empCheck);
-            this.totalEmpHrs += this.EMP_HR;
-        }
-        this.totalEmpWage = this.totalEmpHrs * this.EMP_RATE_PER_HOUR;
-        console.log("Working Hr : "+this.totalEmpHrs+", Total Wage Is : "+this.totalEmpWage);  
+        for (this.DAY = 0; this.DAY <= this.NUM_OF_WORKING_DAYS; this.DAY++) {
+            
+            this.empCheck = Math.floor(Math.random()*2);
+            console.log(this.empCheck);
+            switch(this.empCheck) {
+                
+                case 0 :
+                        this.EMP_HR = 8
+                        this.TOTAL_EMP_HR+=this.EMP_HR;
+                        break;
+                case 1:
+                        this.EMP_HR = 4   
+                        this.TOTAL_EMP_HR+=this.EMP_HR;
+                        break;
+                    
+                default: 
+                    this.EMP_HR = 0
+                
+            }
+       
+     }
+        
+        this.empWage = this.TOTAL_EMP_HR * this.EMP_RATE_PER_HOUR;
+        this.totalWage = this.totalWage + this.empWage;
+        console.log("The Monthly Employee Wage Is : "+this.totalWage);
+            
     }
 }
 
