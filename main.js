@@ -1,3 +1,3 @@
-const utility = require("./FunctionalProgram/utility");
+const utility = require("./FunctionalProgram/EmployeeWage");
 
 utility.mainEmployeeWage();
