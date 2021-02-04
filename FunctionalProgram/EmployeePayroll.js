@@ -1,12 +1,5 @@
 class EmployeePayrollData{
-    id;
-    salary;
-
-    constructor(id,name,salary){
-        this.id = id;
-        this.name = name;
-        this.salary= salary;
-    }
+  
 
     get name(){ return this._name;}
     set name(name){this._name = name;}
@@ -17,13 +10,15 @@ class EmployeePayrollData{
     get salary(){ return this._salary;}
     set salary(salary){this._salary = salary;}
 
+    get gender(){ return this._gender;}
+    set gender(gender){this._gender = gender;}
+
+    get startDate(){ return this._startDate;}
+    set startDate(startDate){this._startDate = startDate;}
+
     toString(){
-        return "id="+ this.id+", name="+this.name+", salary="+this.salary;
+        return "id="+ this.id+", name="+this.name+", salary="+this.salary+", gender="+this._gender+", startdate="+this.startDate;
     }
 }
 
-// let employeePayrollData = new EmployeePayrollData(1,"Mark",30000);
-// console.log(employeePayrollData.toString());
-// employeePayrollData.name = "john";
-// console.log(employeePayrollData.toString());
-module.exports = new EmployeePayrollData(1,"Mark",30000);
+module.exports = new EmployeePayrollData();
