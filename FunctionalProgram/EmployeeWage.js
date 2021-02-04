@@ -62,13 +62,24 @@ class Utility {
         })
         //map
         console.log("print day and daily wages using map:");
-        empDailyWage.map((element,index) => {
-            console.log("Day: ", index+1);
+        empDailyWage.map((element, index) => {
+            console.log("Day: ", index + 1);
             console.log("Daily Wage: ", element);
         })
-        //filter
-        let temp = empDailyWage.filter((element) => element==160 )
+        //filter Full Time Wage
+        let temp = empDailyWage.filter((element) => element == 160)
         console.log("Find Full Day Wage Using Filter: ", temp);
+
+        //find Function
+        function findFun(dayWage) {
+            return dayWage == 160;
+        }
+        console.log("Find First Full Time Wage Occurence: ", empDailyWage.find(findFun));
+
+        //filter Part Time
+        let partTimeWage = empDailyWage.filter((element) => element==80)
+        console.log("Find Part Day Wage Using Filter: ", partTimeWage);
+
         console.log("Total Employee Wage Using forEach: " + totalWage);
 
     }
