@@ -45,7 +45,6 @@ class Utility {
 
     mainEmployeeWage = () => {
 
-        
         let empDailyWage = new Array();
 
         while (this.totalEmpHrs <= this.MAX_HRS_IN_MONTH && this.totalWorkingDays < this.NUM_OF_WORKING_DAYS) {
@@ -56,12 +55,21 @@ class Utility {
             this.totalEmpHrs += this.EMP_HR;
             empDailyWage.push(this.empDailyWage(this.EMP_HR));
         }
-        let temp = 0;
+        //forEach
+        let totalWage = 0;
         empDailyWage.forEach((arrayTotalWage) => {
-            temp += arrayTotalWage;
+            totalWage += arrayTotalWage;
         })
-        console.log(empDailyWage);
-        console.log("Total Employee Wage: " + temp);
+        //map
+        console.log("print day and daily wages using map:");
+        empDailyWage.map((element,index) => {
+            console.log("Day: ", index+1);
+            console.log("Daily Wage: ", element);
+        })
+        //filter
+        let temp = empDailyWage.filter((element) => element==160 )
+        console.log("Find Full Day Wage Using Filter: ", temp);
+        console.log("Total Employee Wage Using forEach: " + totalWage);
 
     }
 }
