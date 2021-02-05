@@ -6,7 +6,11 @@ const EmployeePayrollData = require("./FunctionalProgram/EmployeePayroll");
 
 //EmployeePayroll.js
 EmployeePayrollData.id = 1;
-EmployeePayrollData.name = "john";
+try{
+EmployeePayrollData.name = "John";
+}catch(e){
+    console.error(e);
+}
 EmployeePayrollData.salary = 4000;
 EmployeePayrollData.gender = "Male";
 EmployeePayrollData._startDate = "06/02/2021";
