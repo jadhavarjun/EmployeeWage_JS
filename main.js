@@ -5,13 +5,13 @@ const EmployeePayrollData = require("./FunctionalProgram/EmployeePayroll");
 //utility.mainEmployeeWage();
 
 //EmployeePayroll.js
-EmployeePayrollData.id = 1;
 try{
+EmployeePayrollData.id = 1;
 EmployeePayrollData.name = "John";
+EmployeePayrollData.salary = 4000;
+EmployeePayrollData.gender = "M";
+EmployeePayrollData._startDate = "06/02/2021";
+console.log(EmployeePayrollData.toString());
 }catch(e){
     console.error(e);
 }
-EmployeePayrollData.salary = 4000;
-EmployeePayrollData.gender = "Male";
-EmployeePayrollData._startDate = "06/02/2021";
-console.log(EmployeePayrollData.toString());
